@@ -1,0 +1,212 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[latin]{babel}
+
+\usepackage{fontspec}
+\usepackage{verse}
+\usepackage{textcomp}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage{import}
+\usepackage[small,sf,bf]{titlesec}
+\usepackage{tabto}
+\usepackage{ulem}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\itshape\nouppercase{Rimsko govorništvo – čitanka}}
+\fancyhead[LO]{\itshape\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+ 
+\setmainfont{Old Standard TT}
+\setsansfont{Old Standard TT}
+%\setsansfont{Tahoma}
+
+\hyphenation{δυσ-σέ-βει-αν βού-λεσ-θαί κα-τη-γο-ρού-σης τα-χέ-ως πε-πλημ-μέ-λη-κε νε-α-νί-ας αὐ-τῇ ἀ-φε-λό-με-νος ἀ-πή-γε-το ἐ-πέ-πληξ-άς ἠ-γό-μην ἤ-νεγ-κεν νο-μί-ζει ἄν-θρω-πον παν-το-δα-πά Αἰ-θί-οψ-ιν ἀν-έρ-χε-ται φρον-τί-δων αὐ-τὸς δι-ῃ-ρη-μέ-νος κλέπ-τον-τας ἑ-κα-τόμ-βῃ μέ-γισ-τον κιν-δύ-νου}
+
+\hyphenation{Ελ-λή-νων ξυν-έ-μει-νεν ἐ-πι-όντ-ων ἀνα-σκευ-α-σά-με-νοι ἀ-πω-σά-με-νοι Λα-κε-δαι-μό-νι-οι Ελ-λη-νες δι-ε-φά-νη}
+
+\hyphenation{εὐ-δο-κι-μή-σας ἐν-ταῦ-θα βα-σι-λεύ-εις ἐ-χρή-σα-το συλ-ληφ-θέν-τος}
+
+\hyphenation{θε-ρά-πον-τες ἡ-γοῦ-μαι}
+
+\hyphenation{ἐπι-φα-νέσ-τε-ρον το-σοῦ-τον ἔ-χον-τας συγ-γιγ-νο-μέ-νους μᾶλ-λον με-γίσ-την}
+
+\hyphenation{ἐπ-έσ-κηπ-τε}
+
+\hyphenation{κοι-νω-νοῦ-σιν δη-λῶ-σαι δι-α-λε-γο-μέ-νους πλη-σι-ά-ζον-τας πα-ρα-λι-πεῖν}
+
+\hyphenation{καρ-πῶν ὀ-νο-μα-ζό-με-νον τηκ-τὰ ὅ-σα}
+
+\hyphenation{με-μά-θη-κας Μά-λισ-τα πο-λυ-μα-θής}
+
+\hyphenation{δι-α-βε-βλη-μέ-νος Α-ρι-στό-βου-λος Σω-κρά-τους Δı-α-τ
+ρι-βαί ἐξ-ελ-κύ-σαι Ἐγ-χει-ρί-δι-ον}
+
+\hyphenation{δά-μα-λιν δύ-να-μαι}
+
+\hyphenation{πυ-θο-μέ-νου ἀ-πο-κρί-νε-ται τρα-πέ-ζαις ἀ-πέσ-τει-λαν γρά-ψαν-τος με-τα-τί-θη-σι με-γά-λου Τισ-σα-φέρ-νῃ προσ-ε-πι-μετ-ρῆ-σαι Α-θη-ναί-οις Τισ-σα-φέρ-νην Αλ-κι-βι-ά-δην πα-τρί-δα}
+
+\hyphenation{ἡ-γοῦν-ται ἀ-πο-ρω-τά-των πό-λεις Ras-pra-va Ἀ-πο-λο-γί-α Λα-κε-δαı-μο-νί-ων Κυ-νη-γε-τι-κός}
+
+\hyphenation{πλε-όν-των γε-ωρ-γὸς ἕ-τε-ρον}
+
+\hyphenation{κα-θεῖ-ναι προ-ελ-θοῦ-σαν ἀ-πο-δοῦ-ναι ἀ-πο-φαί-νον-τος ἀ-πεσ-τά-λη ἅ-παν-τας τρί-πο-δα τρί-πο-δος κα-θι-ερώ-θη}
+
+\hyphenation{χρεί-αν παν-τὸς ἀν-επί-σκεπ-τον ἀ-πο-θα-νόν-των πα-ρα-σκευ-ά-ζον-τας φρον-τί-ζον-τας πολ-λοὺς κτω-μέ-νους ἐ-λατ-τοῦσ-θαι ἀ-με-λοῦν-τας ἀ-θε-ρά-πευ-τον κτη-μά-των πει-ρω-μέ-νους ὀ-λι-γω-ροῦν-τας δε-ο-μέ-νων ἐ-ῶν-τας ἔ-μοι-γε}
+
+\hyphenation{αὐ-το-κρά-το-ρας Λά-μα-χον ποι-ή-σαν-τες ἑξή-κον-τα Σε-λι-νουν-τί-ους χρη-μά-των μισ-θόν Νι-κη-ρά-του πε-ρι-γίγ-νη-ται}
+
+
+
+\begin{document}
+
+\title{Rimsko govorništvo\\(164. pr. Kr. – 430. po Kr.)}
+\subtitle{Čitanka}
+\author{Odsjek za klasičnu filologiju\\
+Filozofski fakultet Sveučilišta u Zagrebu}
+\date{Listopad 2018.}
+\maketitle
+
+\clearpage
+\thispagestyle{empty}
+
+
+%\frontmatter
+
+
+\chapter*{Predgovor}
+
+%\section*{O ovoj čitanci}
+
+Izbor koji je pred vama donosi odabrane odlomke tekstova važnih za poznavanje i razumijevanje rimskog govorništva i njegove uloge u društvu, od početka rimske književnosti do kasne antike.
+
+Zadatak je studenata da, uz pomoć uobičajene referentne literature, kod kuće prirede svaku cjelinu, tako da budu spremni raspravljati o sadržaju na nastavi.
+
+Čitanka je također dio lektire propisane za ovaj kolegij, uz Ciceronov govor \textit{Pro Milone}.
+
+Izbor je priredio Neven Jovanović, nastavnik Odsjeka za klasičnu filologiju Filozofskog fakulteta Sveučilišta u Zagrebu.
+
+%\newpage
+
+
+\medskip
+
+U Zagrebu, listopada 2018.
+
+%\section*{Bibliografija}
+
+%{
+%\setlength{\parindent}{0pt}
+
+
+%\mainmatter
+
+%\part{L.\ Annaei Senecae ad Lucilium epistulae morales}
+
+\chapter[Cato]{M.\ Porcius Cato \\(234-149 a.~Chr.~n)}
+
+\import{lectiones/}{c01-cato.tex}
+
+\chapter[C.\ Gracchus]{C.\ Sempronius Gracchus \\(154-121 a.~Chr.~n)}
+
+\import{lectiones/}{c02-gracchus.tex}
+
+\chapter[Crassus]{L.\ Licinius Crassus \\(140-91 a.~Chr.~n)}
+
+\import{lectiones/}{c03-crassus.tex}
+
+\chapter[Rhetorica ad Herennium]{Rhetorica ad Herennium \\(90-80 a.~Chr.~n)}
+
+\import{lectiones/}{c04-rhetherr.tex}
+
+\chapter[Cicero]{M.\ Tullius Cicero \\(106-43 a.~Chr.~n)}
+
+\import{lectiones/}{c04a-cicero.tex}
+
+\chapter[Caesar]{C.\ Iulius Caesar \\(100-44 a.~Chr.~n)}
+
+\import{lectiones/}{c05-caesar-bc2-32.tex}
+
+\chapter[Livius]{T.\ Livius \\(64 aut 59 a.~Chr.~n. – 12 aut 17 a.~D)}
+
+\import{lectiones/}{c06-livius.tex}
+
+\chapter[Laudatio Turiae]{Laudatio Turiae \\(ca. 5 a.\ Chr.\ n)}
+
+\import{lectiones/}{c07-laudatioturiae.tex}
+
+\chapter[Seneca maior]{Lucius Annaeus Seneca maior \\(ca.\ 54 a.~Chr.\ n. – ca.\ 39 a.~D)}
+
+\import{lectiones/}{c08-senecamaior.tex}
+
+\chapter[Claudius]{Tiberius Claudius Caesar Augustus Germanicus \\(10 a.~Chr.~n. – 54 a.~D)}
+
+\import{lectiones/}{c08a-claudius.tex}
+
+\chapter[Petronius]{Gaius Petronius Arbiter \\(27–66 a.~D)}
+
+\import{lectiones/}{c08b-petronius.tex}
+
+\chapter[Quintilianus]{M.\ Fabius Quintilianus \\(ca.\ 35 – ca.\ 100 a.~D)}
+
+\import{lectiones/}{c09-quintilianus.tex}
+
+\chapter[Tacitus]{C.\ Cornelius Tacitus \\(ca.\ 55 – 116/120 a.~D)}
+
+\import{lectiones/}{c09a-tacitus.tex}
+
+\chapter[Plinius minor]{C.\ Plinius Secundus \\(61 – ca.\ 113 a.~D)}
+
+\import{lectiones/}{c12-plinius.tex}
+
+\chapter[Fronto]{M.\ Cornelius Fronto \\(90-95 – ca.\ 167 a.~D)}
+
+\import{lectiones/}{c13-fronto.tex}
+
+\chapter[Apuleius]{Apuleius \\(ca.\ 125 – ca.\ 180 a.~D)}
+
+\import{lectiones/}{c14-apuleius.tex}
+
+\chapter[Tertullianus]{Quintus Septimius Florens Tertullianus \\(150-230 a. D)}
+
+\import{lectiones/}{c15-tertullianus.tex}
+
+\chapter[Panegyricus Constantino]{$\langle$Incerti$\rangle$ panegyricus dictus Constantino filio Constantii (313 a.~D)}
+
+\import{lectiones/}{c15a-panegyricus.tex}
+
+\chapter[Ambrosius]{Ambrosius Mediolanensis \\(340-397 a.~D)}
+
+\import{lectiones/}{c16-ambrosius.tex}
+
+\chapter[Symmachus]{Quintus Aurelius Symmachus \\(ca. 340 – post 402 a.~D)}
+
+\import{lectiones/}{c17-symmachus.tex}
+
+\chapter[Augustinus]{Augustinus Hipponensis \\(354-430 a.~D)}
+
+\import{lectiones/}{c20-augustinus.tex}
+
+%\clearpage
+%\thispagestyle{empty}
+% kraj
+
+%\backmatter
+
+\tableofcontents
+
+\end{document}
