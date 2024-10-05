@@ -1,4 +1,9 @@
 *.aux
+*.fls
+*.fdb_*
+*.xdv
 *.log
 *.out
 *.toc
+auto/
+*~
